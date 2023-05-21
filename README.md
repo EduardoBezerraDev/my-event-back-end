@@ -23,10 +23,10 @@ $ Execute o projeto com o comando "php artisan serve"
 
 ## Migrations e Seeds
 
-Para rodar as migrations propagar o banco utilizando seeds, basta executar o comando "php artisan migrate --seed"
+Esse projeto possui migrations e seeds
 
 ```
-$ execute "./vendor/bin/phpunit" para está executando os testes
+$ execute "php artisan migrate --seed"
 ```
 
 ## Testes
