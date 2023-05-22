@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\EventModel;
 
 class EventController extends Controller
 {
+    private $eventModel;
+
+    public function __construct(EventModel $eventModel)
+    {
+        $this->eventModel = $eventModel;
+    }
+
     public function index()
     {
-        $response = Http::get('https://demo.ws.itarget.com.br/event.php');
-
-        $events = $response->json();
+        $events = $this->eventModel->getAllEvents();
 
         return response()->json($events);
     }

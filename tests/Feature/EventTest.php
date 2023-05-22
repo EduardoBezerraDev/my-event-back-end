@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
-class EventControllerTest extends TestCase
+class EventTest extends TestCase
 {
     public function testIndex()
     {
