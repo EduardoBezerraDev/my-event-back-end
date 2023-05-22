@@ -77,6 +77,9 @@ class RegistrationTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJsonCount(3, 'data');
+            ->assertJsonCount(3, 'data'); // Verifique o número total de resultados, ajuste para o valor correto
+
+        $responseData = $response->json();
+        $this->assertCount(3, $responseData['data']);
     }
 }

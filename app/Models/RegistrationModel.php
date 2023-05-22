@@ -11,14 +11,14 @@ class RegistrationModel extends Model
         'event', 'start_date', 'end_date', 'name', 'cpf', 'email'
     ];
 
-    public function index($columnFilter, $filter, $eventId)
+    public function index()
     {
-        return $this;
+        return $this->paginate(10);
     }
 
     public function getByEvent($columnFilter, $filter, $eventId)
     {
-        return $this->where($columnFilter, 'LIKE', '%' . $filter . '%');
+        return $this->where($columnFilter, 'LIKE', '%' . $filter . '%')->paginate(10);
     }
 
     public function createRegistration($data)

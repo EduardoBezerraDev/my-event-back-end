@@ -39,15 +39,14 @@ class RegistrationController extends Controller
         $columnFilter = $request->query('column');
         $filter = $request->query('filter');
         $eventId = $request->query('eventId');
-
-        $registrations = $this->registrationModel->getByEvent($columnFilter, $filter,  $eventId)->paginate(10);
+        $registrations = $this->registrationModel->getByEvent($columnFilter, $filter,  $eventId);
 
         return response()->json($registrations, 200);
     }
 
     public function index(Request $request)
     {
-        $registrations = $this->registrationModel->paginate(10);
+        $registrations = $this->registrationModel->index();
 
         return response()->json($registrations, 200);
     }
